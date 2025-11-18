@@ -16,7 +16,7 @@ ENV PYTHONPATH=/app
 WORKDIR /app
 COPY . .
 
-RUN uv sync --frozen
+RUN uv sync
 
 CMD ["sh", "-c", "uv run alembic upgrade head && uv run uvicorn main:app --host 0.0.0.0 --port 8000 --reload"]
 
